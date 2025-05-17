@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profilkarte</title>
+  <style>
+    /* Grundstil der Seite: zentriert die Karte vertikal und horizontal */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Gesamte Profilkarte */
+    .profile-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* weicher Schatten */
+      width: 320px;
+      text-align: center;
+    }
+
+    /* Kopfbereich mit Hintergrundbild */
+    header.profile-header {
+      height: 150px;
+      background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Container für das Profilbild */
+    figure.profile-picture {
+      margin: -50px auto 0; /* Bild überlagert leicht den Header */
+    }
+
+    /* Rundes Profilbild mit weißem Rahmen */
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; /* macht das Bild rund */
+      border: 4px solid white;
+      object-fit: cover;
+    }
+
+    /* Name der Person */
+    h1.profile-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    /* Beschreibung / Biografie */
+    p.profile-bio {
+      color: #666;
+      font-size: 14px;
+      padding: 0 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Standort und Kontaktinformationen */
+    section.profile-details {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    /* Statistikenbereich (Follower / Following) */
+    section.profile-stats {
+      background: #f1f1f1;
+      display: flex;
+    }
+
+    section.profile-stats .stat:first-child {
+        border-right: 1px solid rgb(216, 216, 216);
+    }
+
+    /* Einzelne Statistikbox */
+    div.stat {
+        border-top: 1px solid rgb(216, 216, 216);
+        flex: 1;
+        padding: 15px;
+    }
+
+    div.stat
+
+    /* Zahlenangabe in der Statistik */
+    .stat strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    /* Footer mit Follow-Button */
+    footer.profile-footer {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 0;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Hover-Effekt für Follow-Button */
+    footer.profile-footer:hover {
+      background-color: #45a049;
+    }
+
+    /* 3D-Spin-Animation für das Profilbild */
+    @keyframes spin3D {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+    }
+
+    .profile-img.spin {
+        animation: spin3D .7s linear infinite;
+        animation-iteration-count: 1; /* Nur 3 Wiederholungen */
+        transform-style: preserve-3d;
+    }
+  </style>
+</head>
+<body>
+
+<article class="profile-card" aria-label="Profilkarte von Ann Lovefully">
+  <!-- Kopfbereich mit Hintergrundbild -->
+  <header class="profile-header"></header>
+
+  <!-- Profilbild im figure-Tag -->
+  <figure class="profile-picture">
+    <img 
+      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1" 
+      alt="Profilbild von Ann Lovefully" 
+      class="profile-img" />
+  </figure>
+
+  <!-- Hauptinhalte -->
+  <main class="profile-main">
+    <h1 class="profile-name">Ann Lovefully</h1>
+    <p class="profile-bio">
+      Designerin, Katzenliebhaberin, Bücherwurm, Apfelkuchen-Fan und Naturfreundin :)
+    </p>
+
+    <!-- Standort & Kontakt -->
+    <section class="profile-details" aria-label="Standort und Kontakt">
+      <span>📍 Ungarn</span>
+      <span>✉️ E-Mail senden</span>
+    </section>
+
+    <!-- Statistiken -->
+    <section class="profile-stats" aria-label="Follower-Statistiken">
+      <div class="stat">
+        <strong>8,100</strong>
+        Followers
+      </div>
+      <div class="stat">
+        <strong>3,650</strong>
+        Following
+      </div>
+    </section>
+  </main>
+
+  <!-- Follow-Button -->
+  <footer class="profile-footer" role="button" tabindex="0">
+    <div class="follow-btn">Follow</div>
+  </footer>
+</article>
+
+<script src="main.js"></script>
+</body>
+</html>
+
+<!--
+Verwendete HTML-Tags und ihre Bedeutung:
+
+<!DOCTYPE html> – Deklariert den Dokumenttyp als HTML5.
+
+<html> – Das Wurzelelement des HTML-Dokuments. Enthält alle anderen HTML-Elemente.
+
+<head> – Enthält Metainformationen über das Dokument (z. B. Titel, Zeichencodierung, verlinkte Ressourcen).
+
+  <meta charset="UTF-8" /> – Legt die Zeichenkodierung auf UTF-8 fest.
+
+  <meta name="viewport" ... /> – Macht die Seite responsiv, z. B. auf Mobilgeräten.
+
+  <title> – Definiert den Titel des Dokuments, der im Browser-Tab angezeigt wird.
+
+  <style> – Enthält eingebettetes CSS für das Styling der HTML-Elemente.
+
+<body> – Enthält alle sichtbaren Inhalte der Webseite.
+
+<article> – Markiert einen eigenständigen Inhaltsbereich. Hier wird die Profilkarte als eigener Artikel dargestellt.
+
+<header> – Der Kopfbereich der Karte mit einem Hintergrundbild.
+
+<figure> – Container für das Bild. Wird oft verwendet für Abbildungen mit optionaler Bildunterschrift.
+
+  <img> – Zeigt das Profilbild an. `alt` ist eine Beschreibung für Screenreader oder falls das Bild nicht geladen wird.
+
+<main> – Der Hauptinhalt der Profilkarte (Name, Beschreibung, Standort, Statistiken).
+
+  <h1> – Die Hauptüberschrift mit dem Namen der Person.
+
+  <p> – Ein Absatz. Hier zur Darstellung der Biografie.
+
+  <section> – Gliedert inhaltlich verwandte Bereiche. Hier für Standort/Details und Follower-Statistiken.
+
+    <span> – Inline-Element für kleine Inhaltsteile (z. B. Standort, Kontaktinfo).
+
+    <div> – Block-Element für das Layout, z. B. einzelne Statistiken (Followers/Following).
+
+      <strong> – Hebt wichtigen Text hervor (hier: die Zahlenwerte der Statistiken).
+
+<footer> – Der Fußbereich der Profilkarte, enthält den Follow-Button.
+
+  <div> – Container für den Button-Text.
+
+<script> – Lädt eine externe JavaScript-Datei (hier: "main.js").
+
+Hinweis:
+- `aria-label` – Barrierefreiheits-Attribut, beschreibt Elemente für Screenreader.
+- `role="button"` – Weist dem Element die semantische Rolle eines Buttons zu.
+- `tabindex="0"` – Macht das Element mit der Tastatur fokussierbar.
+-->
